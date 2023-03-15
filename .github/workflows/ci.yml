@@ -10,7 +10,6 @@ on:
       - '.github/**'
       - '!.github/workflows/ci.yml'
       - '!.github/workflows/typechecking.yml'
-      - '!.github/workflows/tests.yml'
       - '!.github/workflows/release.yml'
       - '**.md'
       - .editorconfig
@@ -22,7 +21,6 @@ on:
       - '.github/**'
       - '!.github/workflows/ci.yml'
       - '!.github/workflows/typechecking.yml'
-      - '!.github/workflows/tests.yml'
       - '!.github/workflows/release.yml'
       - '**.md'
       - .editorconfig
@@ -37,11 +35,9 @@ concurrency:
 jobs:
   typechecking:
     uses: ./.github/workflows/typechecking.yml
-  tests:
-    uses: ./.github/workflows/tests.yml
   draft_release:
     with:
       dry-run: ${{ github.event_name != 'push' || github.ref_name != 'main' }}
-    needs: [ typechecking, tests ]
+    needs: [ typechecking ]
     uses: ./.github/workflows/release.yml
 

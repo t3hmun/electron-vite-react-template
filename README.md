@@ -1,4 +1,5 @@
 Forked https://github.com/cawa-93/vite-electron-builder at ef226ee
+
 The original readme is pretty good.
 
 - I'm cutting this down to my own simple React use case.
@@ -22,5 +23,5 @@ The original readme is pretty good.
     - [x] Make sure build works
     - [ ] rebuild default test components - test preload.
 
-- [ ] Nuke test libs
+- [x] Nuke test libs
     - I can put them back when I understand them
